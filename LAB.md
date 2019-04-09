@@ -57,7 +57,7 @@ main jobs:
 And TDD them (they are both synchronous):
 
 ### `ChatRoom`
-
+<!-- 
 A class that tracks clients (users) in the chat room
 
 1. Test that a ChatRoom instance 'takes a socket, assigns random user name, and stores by user name'. Do this by
@@ -66,7 +66,7 @@ A class that tracks clients (users) in the chat room
     * expect that a name was returned as the username property of the client object (e.g. `expect(client.username).toEqual(username);`)
     * expect that the name was assigned as a property to the client object
     * call `.getClient(username)` passing in the username returned from the `.add` call, and
-        expect that the returned object is the same as what you supplied to the `.add` call.
+        expect that the returned object is the same as what you supplied to the `.add` call. -->
 2. Test that a ChatRoom instance 'renames a user'
     * Create a new ChatRoom and add a user as above
     * Call `.rename(username, newusername)`
