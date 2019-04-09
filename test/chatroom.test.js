@@ -8,9 +8,16 @@ describe('CHAT ROOM TESTS', () => {
 
   it('stores username in chatroom', () => {
     const client = {};
-    const result = chatroom.createUser(client);
+    const result = chatroom.createUser(client); 
+    // result = created object within all users array
     expect(result.username).toEqual(expect.any(String));
     expect(client.username).toEqual(result.username);
   });
 
+  it('can get client by user name', () => {
+    const client = {};
+    const user = chatroom.createUser(client); 
+    const object = chatroom.getClient(user.username);
+    expect(object.username).toEqual(expect.any(String));
+  });
 });
