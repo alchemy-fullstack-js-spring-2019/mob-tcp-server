@@ -20,13 +20,20 @@ describe('chatroom tests', () => {
   });
 
   it('get client', () => {
-
     const result = chatroom.getClient('user1');
-
     expect(result).toEqual(client1);
   });
 
-
+  it('rename client', () => {
+    const username = client1.username;
+    const newUsername = client2.username;
+    const brandNewUsername = 'Dave';
+    expect(chatroom.rename(username, newUsername)).toBeFalsy();
+    expect(chatroom.rename(username, brandNewUsername)).toBeTruthy();
+    expect(chatroom.rename(username, 'Emily')).toEqual({
+      username: 'Emily'
+    });
+  });
 
 });
 
