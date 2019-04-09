@@ -28,7 +28,16 @@ describe('chatroom tests', () => {
     chatroom.add(client2);
     chatroom.add(client3);
     chatroom.rename(client.userName, 'new username');
-    console.log('current user name', client.userName);
     expect(client.userName).toEqual('new username');
+  });
+  it('returns cant rename existing user', () => {
+    const client = {};
+    const client2 = {};
+    const client3 = {};
+    chatroom.add(client);
+    chatroom.add(client2);
+    chatroom.add(client3);
+    chatroom.rename(client.userName, client2.userName);
+    expect(client.userName).toEqual(client.userName);
   });
 });
