@@ -11,7 +11,7 @@ describe('chatroom tests', () => {
     chatroom.add(client1);
     chatroom.add(client2);
     chatroom.add(client3);
-
+  
   });
   
   it('add method is working', () => {
@@ -20,10 +20,10 @@ describe('chatroom tests', () => {
   });
 
   it('get client', () => {
-    
 
-    expect(client1.username).toEqual(expect.any(String));
-    expect(client1.username).toEqual('user1');
+    const result = chatroom.getClient('user1');
+
+    expect(result).toEqual(client1);
   });
 
 
