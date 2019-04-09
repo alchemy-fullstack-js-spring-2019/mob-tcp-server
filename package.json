@@ -25,6 +25,7 @@
   "homepage": "https://github.com/parkerchristian/mob-tcp-server#readme",
   "devDependencies": {
     "eslint": "^5.16.0",
-    "jest": "^24.7.1"
+    "jest": "^24.7.1",
+    "shortid": "^2.2.14"
   }
 }
