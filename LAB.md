@@ -33,7 +33,7 @@ If that user reconnects, they would again be randomly assigned a username with a
 ## Implementation Guidelines
 
 The server needs to be able to manage clients. Use the built-in JavaScript `Map` class to correlate user names
-to sockets. `Map` also allows you to iterative all of the sockets.
+to sockets. `Map` also allows you to iterate over all of the sockets.
 
 Basic job of the server
 

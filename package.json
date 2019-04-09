@@ -21,5 +21,9 @@
   "devDependencies": {
     "eslint": "^5.16.0",
     "jest": "^24.7.1"
+  },
+  "dependencies": {
+    "random-username-generator": "^1.0.4",
+    "shortid": "^2.2.14"
   }
 }
