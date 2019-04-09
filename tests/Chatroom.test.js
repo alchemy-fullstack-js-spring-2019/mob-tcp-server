@@ -37,4 +37,10 @@ describe('Chatroom class', () => {
         expect(chatroom.getClient('ryan')).toEqual(testUser);
         expect(chatroom.getClient(userObj.userName)).toEqual(userObj);
     });
+    it('all method returns array of all clients', () => {
+        chatroom.add(client);
+        chatroom.add(client);
+        chatroom.add(client);
+        expect(chatroom.allClients()).toHaveLength(4);
+    });
 });
