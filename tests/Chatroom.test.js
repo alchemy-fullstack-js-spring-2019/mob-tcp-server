@@ -6,12 +6,22 @@ describe('Chatroom class', () => {
     let client = null;
     beforeEach(() => {
         chatroom = new Chatroom();
-        client = { };
+        client = {};
     });
 
     it('chatroom instance takes a socket', () => {
-        chatroom.add(client, userName => {
-            expect(client.userName).toEqual(userName);
-        });
+        const result = chatroom.add(client);
+        expect(result.userName).toEqual(expect.any(String));
+        expect(result.userName).toEqual(client.userName);
+    });
+    // it('adds a second user', () => {
+    //     const clientTwo = {};
+    //     const resultOne = chatroom.add(client);
+    //     const resultTwo = chatroom.add(clientTwo);
+    // });
+    it('gets client object added in "add" method', () => {
+        const userObj = chatroom.add(client);
+        chatroom.getClient(userObj.userName);
+        expect(userObj).toEqual(client);
     });
 });
