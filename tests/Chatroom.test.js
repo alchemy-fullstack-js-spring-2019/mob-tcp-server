@@ -33,6 +33,8 @@ describe('Chatroom class', () => {
     it('does not rename if newUserName matches existing userName', () => {
         const testUser = { userName: 'ryan' };
         chatroom.allUsers.set('ryan', testUser);
-        expect(chatroom.rename(testUser.userName, 'ryan')).toBeFalsy();
+        expect(chatroom.rename(userObj.userName, 'ryan')).toBeFalsy();
+        expect(chatroom.getClient('ryan')).toEqual(testUser);
+        expect(chatroom.getClient(userObj.userName)).toEqual(userObj);
     });
 });
