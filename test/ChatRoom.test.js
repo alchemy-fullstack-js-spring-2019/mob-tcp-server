@@ -40,8 +40,8 @@ describe('ChatRoom tests', () => {
       something: 'something'
     };
 
-    const resultOne = testChatRoom.add(clientOne);
-    const resultTwo = testChatRoom.add(clientTwo);
+    testChatRoom.add(clientOne);
+    testChatRoom.add(clientTwo);
     expect(testChatRoom.rename(clientOne.username, clientTwo.username)).toBeFalsy();
     expect(testChatRoom.getClient(clientOne.username)).toEqual(clientOne);
     expect(testChatRoom.getClient(clientTwo.username)).toEqual(clientTwo);
@@ -55,7 +55,7 @@ describe('ChatRoom tests', () => {
     testChatRoom.add(clientOne);
     testChatRoom.add(clientTwo);
     testChatRoom.add(clientThree);
-    
+
     expect(testChatRoom.all()).toEqual([clientOne, clientTwo, clientThree]);
   });
 });
