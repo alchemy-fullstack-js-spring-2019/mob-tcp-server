@@ -14,5 +14,23 @@ describe('parseMesssage', () => {
     });
 
   });
+  it('works if no arg', () => {
+    const sampleString = '@cmd some text';
+    expect(parseMessage(sampleString)).toEqual({
+      command: 'cmd',
+      arg: '',
+      text: 'some text'
+    });
+
+  });
+  it('works if no text', () => {
+    const sampleString = '@cmd:param';
+    expect(parseMessage(sampleString)).toEqual({
+      command: 'cmd',
+      arg: 'param',
+      text: ''
+    });
+
+  });
   
 });
