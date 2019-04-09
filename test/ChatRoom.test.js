@@ -47,4 +47,15 @@ describe('ChatRoom tests', () => {
     expect(testChatRoom.getClient(clientTwo.username)).toEqual(clientTwo);
   });
 
+  it('calling all on the chatroom returns an array of all clients', () => {
+    const clientOne = {};
+    const clientTwo = {};
+    const clientThree = {};
+
+    testChatRoom.add(clientOne);
+    testChatRoom.add(clientTwo);
+    testChatRoom.add(clientThree);
+    
+    expect(testChatRoom.all()).toEqual([clientOne, clientTwo, clientThree]);
+  });
 });
