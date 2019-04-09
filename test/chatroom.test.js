@@ -5,7 +5,11 @@ describe('chatroom tests', () => {
   let client1 = {};
   let client2 = {};
   let client3 = {};
-
+  const arr = [
+    { username: 'user1' },
+    { username: 'user2' },
+    { username: 'user3' }];
+  
   beforeEach(()=> {
     chatroom = new Chatroom();
     chatroom.add(client1);
@@ -33,6 +37,12 @@ describe('chatroom tests', () => {
     expect(chatroom.rename(username, 'Emily')).toEqual({
       username: 'Emily'
     });
+  });
+
+  it('returns all clients', () => {
+    const result = chatroom.allClients();
+    expect(result).toEqual(arr);
+    console.log(result);
   });
 
 });
