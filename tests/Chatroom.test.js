@@ -1,18 +1,18 @@
 const Chatroom = require('../lib/Chatroom');
-const uuid = require('uuid/v4');
 
 describe('Chatroom class', () => {
     let chatroom = null;
     let client = null;
+    let userObj = null;
     beforeEach(() => {
         chatroom = new Chatroom();
         client = {};
+        userObj = chatroom.add(client);
     });
 
     it('chatroom instance takes a socket', () => {
-        const result = chatroom.add(client);
-        expect(result.userName).toEqual(expect.any(String));
-        expect(result.userName).toEqual(client.userName);
+        expect(userObj.userName).toEqual(expect.any(String));
+        expect(userObj.userName).toEqual(client.userName);
     });
     // it('adds a second user', () => {
     //     const clientTwo = {};
@@ -20,8 +20,14 @@ describe('Chatroom class', () => {
     //     const resultTwo = chatroom.add(clientTwo);
     // });
     it('gets client object added in "add" method', () => {
-        const userObj = chatroom.add(client);
         chatroom.getClient(userObj.userName);
         expect(userObj).toEqual(client);
+    });
+
+    it('renames a user', () => {
+        chatroom.rename(userObj.userName, 'ryan');
+        expect(chatroom.getClient(userObj.userName)).toBeFalsy();
+        expect(chatroom.getClient('ryan')).toEqual({ 'userName': 'ryan' });
+
     });
 });
