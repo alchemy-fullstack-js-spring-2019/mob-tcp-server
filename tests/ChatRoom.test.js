@@ -40,4 +40,14 @@ describe('chatroom tests', () => {
     chatroom.rename(client.userName, client2.userName);
     expect(client.userName).toEqual(client.userName);
   });
+  it('returns all users in map', () => {
+    const client = {};
+    const client2 = {};
+    const client3 = {};
+    chatroom.add(client);
+    chatroom.add(client2);
+    chatroom.add(client3);
+    const expected = [client, client2, client3];
+    expect(chatroom.all()).toEqual(expected);
+  });
 });
