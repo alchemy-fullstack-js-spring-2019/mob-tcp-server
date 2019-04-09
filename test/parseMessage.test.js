@@ -17,6 +17,11 @@ describe('Parse message', () => {
   it('identifies params', () => {
     const mockString = '@cmd:param some text';
     const parsedObject = parseMessage(mockString);
-    expect(parsedObject.command).toEqual('@cmd');
+    expect(parsedObject.arg).toEqual('param');
+  });
+  it('identifies text input', () => {
+    const mockString = '@cmd:param some text';
+    const parsedObject = parseMessage(mockString);
+    expect(parsedObject.text).toEqual('some text');
   });
 });
