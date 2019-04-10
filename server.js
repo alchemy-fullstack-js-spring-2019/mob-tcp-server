@@ -1,3 +1,3 @@
-const app = require('./lib/app');
+const server = require('./lib/app');
 
-app.listen(5500);
+server.listen(5500);
