@@ -11,21 +11,21 @@ describe('parse message', () => {
     const expected = parseMessage(message);
     expect(expected.command).toEqual('dm');
     expect(expected.arg).toEqual('username');
-    expect(expected.text).toEqual('hi everyone');
+    expect(expected.text).toEqual(' hi everyone');
   });
-  // it('returns object with command and argument properties from string', () => {
-  //   const message = '@nick:username';
-  //   const expected = parseMessage(message);
-  //   expect(expected.command).toEqual('nick');
-  //   expect(expected.arg).toEqual('username');
-  //   expect(expected.text).toEqual(null);
-  // });
-  // it('returns object with command and text properties from string', () => {
-  //   const message = '@all hello';
-  //   const expected = parseMessage(message);
-  //   expect(expected.command).toEqual('all');
-  //   expect(expected.arg).toEqual(null);
-  //   expect(expected.text).toEqual('hello');
-  // });
+  it('returns object with command and argument properties from string', () => {
+    const message = '@nick:username';
+    const expected = parseMessage(message);
+    expect(expected.command).toEqual('nick');
+    expect(expected.arg).toEqual('username');
+    expect(expected.text).toEqual('');
+  });
+  it('returns object with command and text properties from string', () => {
+    const message = '@all hello';
+    const expected = parseMessage(message);
+    expect(expected.command).toEqual('all');
+    expect(expected.arg).toEqual('');
+    expect(expected.text).toEqual(' hello');
+  });
 
 });
