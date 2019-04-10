@@ -4,15 +4,17 @@ describe('ChatRoom tests', () => {
   let testChatRoom = null;
   beforeEach(() => {
     testChatRoom = new ChatRoom();
-
   });
+
   it('takes a socket, assigns user name, and stores by user name', () => {
     const client = {
       something: 'something'
     };
+
     const result = testChatRoom.add(client);
     expect(client.username).toEqual(expect.any(String));
     expect(client.username).toEqual(result.username);
+
     const returnedObj = testChatRoom.getClient(result.username);
     expect(returnedObj).toEqual(client);
   });
@@ -21,10 +23,12 @@ describe('ChatRoom tests', () => {
     const client = {
       something: 'something'
     };
+
     testChatRoom.add(client);
     const oldUsername = client.username;
     const result = testChatRoom.rename(oldUsername, 'happybananas');
     expect(result).toBeTruthy();
+
     const notClient = testChatRoom.getClient(oldUsername);
     expect(notClient).toBeFalsy();
     expect(testChatRoom.getClient('happybananas')).toEqual(client);
@@ -42,6 +46,7 @@ describe('ChatRoom tests', () => {
 
     testChatRoom.add(clientOne);
     testChatRoom.add(clientTwo);
+    
     expect(testChatRoom.rename(clientOne.username, clientTwo.username)).toBeFalsy();
     expect(testChatRoom.getClient(clientOne.username)).toEqual(clientOne);
     expect(testChatRoom.getClient(clientTwo.username)).toEqual(clientTwo);
