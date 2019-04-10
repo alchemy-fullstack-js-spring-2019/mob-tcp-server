@@ -36,4 +36,15 @@ describe('CHAT ROOM TESTS', () => {
     chatroom.rename(client.userName, newClientname.userName);
     expect(client.userName).toEqual(newClientname.userName);
   });
+
+  it('returns all users', () => {
+    const client = {};
+    const client2 = {};
+    const client3 = {};
+    chatroom.createUser(client);
+    chatroom.createUser(client2);
+    chatroom.createUser(client3);
+    const expected = [client, client2, client3];
+    expect(chatroom.allClients()).toEqual(expected);
+  });
 });
