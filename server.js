@@ -5,6 +5,7 @@ const server = net.createServer(socket => {
 
   socket.pipe(socket);
 });
+console.log(server);
 ///////////
 
 

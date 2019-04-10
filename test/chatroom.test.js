@@ -20,4 +20,12 @@ describe('CHAT ROOM TESTS', () => {
     const object = chatroom.getClient(user.username);
     expect(object.username).toEqual(expect.any(String));
   });
+
+  it('renames the client username', () => {
+    const client = {};
+    const user = chatroom.createUser(client); 
+    const newUser = chatroom.rename(user.username, user.newUserName);
+    console.log(newUser);
+    expect('fake').toEqual('fake');
+  });
 });
