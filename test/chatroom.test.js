@@ -23,9 +23,17 @@ describe('CHAT ROOM TESTS', () => {
 
   it('renames the client username', () => {
     const client = {};
-    const user = chatroom.createUser(client); 
-    const newUser = chatroom.rename(user.username, user.newUserName);
-    console.log(newUser);
-    expect('fake').toEqual('fake');
+    chatroom.createUser(client); 
+    chatroom.rename(client.username, expect.any(String));
+    expect(client.username).toEqual(expect.any(String));
+  });
+
+  it('cant rename same as an existing user', () => {
+    const client = {};
+    const newClientname = {};
+    chatroom.createUser(client);
+    chatroom.createUser(newClientname);
+    chatroom.rename(client.userName, newClientname.userName);
+    expect(client.userName).toEqual(newClientname.userName);
   });
 });
