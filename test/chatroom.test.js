@@ -1,7 +1,6 @@
 const ChatRoom = require('../lib/chatroom');
 
 describe('chat room test', () => {
-    
     let chatRoom = null;
     let user1 = {};
     let clientObject = null;
