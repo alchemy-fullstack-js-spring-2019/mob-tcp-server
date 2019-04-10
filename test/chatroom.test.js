@@ -20,10 +20,11 @@ describe('chat room test', () => {
         expect(userObj).toEqual(clientObject);
     });
 
-    it('on chatRoom.rename, return true', () => {
+    it('on chatRoom.rename, return new username', () => {
         const newUserName = 'banana';
         const nameFromMap = chatRoom.renameClient(clientObject.username, newUserName);
-
+        const notAUser = chatRoom.renameClient('dingdong', newUserName);
         expect(nameFromMap).toEqual(newUserName);
+        expect(notAUser).toBeFalsy();
     });
 });
