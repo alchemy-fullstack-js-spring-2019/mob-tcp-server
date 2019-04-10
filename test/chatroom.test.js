@@ -31,13 +31,14 @@ describe('chatroom tests', () => {
   it('rename client', () => {
     const username = client1.username;
     const newUsername = client2.username;
+    const newnewnew = client3.username;
     const brandNewUsername = 'Dave';
-    const replaceName = 'Emily'
     expect(chatroom.rename(username, newUsername)).toBeFalsy();
     expect(chatroom.rename(username, brandNewUsername)).toBeTruthy();
-    expect(chatroom.rename(username, replaceName)).toEqual({
+    expect(chatroom.rename(newnewnew, 'Emily')).toEqual({
       username: 'Emily'
     });
+
   });
 
   it('returns all clients', () => {
