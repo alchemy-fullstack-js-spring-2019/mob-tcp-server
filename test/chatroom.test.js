@@ -34,4 +34,10 @@ describe('chat room test', () => {
         const AlreadyAUser = chatRoom.renameClient(clientObject2.username, 'user1');
         expect(AlreadyAUser).toBeTruthy();
     });
+
+    it('.all chatroom returns an array of all clients', () => {
+        const expected = [{ 'username': 'user1' }, { 'username': 'user2' }];
+        const allClients = chatRoom.call();
+        expect(expected).toEqual(allClients);
+    });
 });
