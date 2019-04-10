@@ -3,11 +3,14 @@ const ChatRoom = require('../lib/chatroom');
 describe('chat room test', () => {
     let chatRoom = null;
     let user1 = {};
+    let user2 = {};
     let clientObject = null;
+    let clientObject2 = null;
 
     beforeEach(() => {
         chatRoom = new ChatRoom;
         clientObject = chatRoom.add(user1);
+        clientObject2 = chatRoom.add(user2);
     });
 
     it('chat room instance adds a client', () => {
@@ -28,7 +31,7 @@ describe('chat room test', () => {
     });
 
     it('if new user name exists, do nothing!', () => {
-        const AlreadyAUser = chatRoom.renameClient('dingdong', 'user1');
-        expect(AlreadyAUser).toBeFalsy();
+        const AlreadyAUser = chatRoom.renameClient(clientObject2.username, 'user1');
+        expect(AlreadyAUser).toBeTruthy();
     });
 });
