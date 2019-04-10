@@ -26,4 +26,9 @@ describe('chat room test', () => {
         expect(nameFromMap).toEqual(newUserName);
         expect(notAUser).toBeFalsy();
     });
+
+    it('if new user name exists, do nothing!', () => {
+        const AlreadyAUser = chatRoom.renameClient('dingdong', 'user1');
+        expect(AlreadyAUser).toBeFalsy();
+    });
 });
