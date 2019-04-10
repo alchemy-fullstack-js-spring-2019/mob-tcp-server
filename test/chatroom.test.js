@@ -32,9 +32,10 @@ describe('chatroom tests', () => {
     const username = client1.username;
     const newUsername = client2.username;
     const brandNewUsername = 'Dave';
+    const replaceName = 'Emily'
     expect(chatroom.rename(username, newUsername)).toBeFalsy();
     expect(chatroom.rename(username, brandNewUsername)).toBeTruthy();
-    expect(chatroom.rename(username, 'Emily')).toEqual({
+    expect(chatroom.rename(username, replaceName)).toEqual({
       username: 'Emily'
     });
   });
