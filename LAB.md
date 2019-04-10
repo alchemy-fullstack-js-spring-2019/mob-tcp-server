@@ -51,7 +51,7 @@ discriminate (there is no messaging protocol after all!).
 Your biggest tool for testing is to use other data structures to do specific tasks. We can isolate two
 main jobs:
 
-1. Managing clients in the chat
+1. Managing clients in the chat - DONE
 1. Parsing incoming messages
 
 And TDD them (they are both synchronous):
