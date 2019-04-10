@@ -33,7 +33,7 @@ If that user reconnects, they would again be randomly assigned a username with a
 ## Implementation Guidelines
 
 The server needs to be able to manage clients. Use the built-in JavaScript `Map` class to correlate user names
-to sockets. `Map` also allows you to iterative all of the sockets.
+to sockets. `Map` also allows you to iterate over all of the sockets.
 
 Basic job of the server
 
@@ -57,7 +57,7 @@ main jobs:
 And TDD them (they are both synchronous):
 
 ### `ChatRoom`
-
+<!-- 
 A class that tracks clients (users) in the chat room
 
 1. Test that a ChatRoom instance 'takes a socket, assigns random user name, and stores by user name'. Do this by
@@ -66,20 +66,20 @@ A class that tracks clients (users) in the chat room
     * expect that a name was returned as the username property of the client object (e.g. `expect(client.username).toEqual(username);`)
     * expect that the name was assigned as a property to the client object
     * call `.getClient(username)` passing in the username returned from the `.add` call, and
-        expect that the returned object is the same as what you supplied to the `.add` call.
-2. Test that a ChatRoom instance 'renames a user'
+        expect that the returned object is the same as what you supplied to the `.add` call. -->
+<!-- 2. Test that a ChatRoom instance 'renames a user'
     * Create a new ChatRoom and add a user as above
     * Call `.rename(username, newusername)`
     * expect that the call to `.rename` returns `true`
     * expect that using the old username does not return the client
     * expect that using the new username **does** return the client
     * expect that the `client.username` is now equal to the new username (This means the property on the client object
-    needs to change _as well as_ the key in the map.
-3. Add a Test 'can not rename to existing user name'. Should not throw an error, just do not do the requested operation
+    <!-- needs to change _as well as_ the key in the map. -->
+<!-- 3. Add a Test 'can not rename to existing user name'. Should not throw an error, just do not do the requested operation
     * Create a new ChatRoom and add two users
     * Call `.rename(username1, username2)`
     * expect that return value from `.rename` is `false`
-    * expect that username1 and username2 return their original client objects
+    * expect that username1 and username2 return their original client objects --> -->
 4. Test that calling `.all()` on the chat room returns an array of all clients
     * Hint: Use the following to get all values from a map (example assumes map is stored as `this.clients`):
     ```js
