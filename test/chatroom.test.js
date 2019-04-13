@@ -44,23 +44,4 @@ describe('CHAT ROOM TESTS', () => {
     expect(allClients).toContain(client2);
     expect(allClients).toContain(client3);
   });
-
-
-  // it('gets all', () => {
-  //   client1{};
-  //   client2{};
-  //   client3{}:
-  //GETALL
-  //   const client1 = chatroom.add(client1);
-  //   const client2 = chatroom.add(client2);
-  //   const client3 = chatroom.add(client3);
-  // //I added const client
-  //   const results = chatroom.all();
-  //   expect(results).toContainEqual(client1);
-  //   expect(results).toContainEqual(client2);
-  //   expect(results).toContainEqual(client3);
-
-  //(and some other stuff in chatroom.js I think)
-  //})
-
 });
