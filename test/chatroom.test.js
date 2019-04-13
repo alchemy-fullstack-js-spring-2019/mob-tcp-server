@@ -29,13 +29,22 @@ describe('CHAT ROOM TESTS', () => {
     expect(client.username).toEqual('Henrietta');
   });
 
-  //ryan's example:
-  //const client = {};
-  //   chatroom.add(client);
-  // chatroom.rename(client.username, 'ryan');
-  // const result = chatroom.getClient('ryan');
-  // expect(client).toEqual(result);
-  // expect(client.username).toEqual('ryan');
+  it('get all function', () => {
+    const client1 = {};
+    const client2 = {};
+    const client3 = {};
+
+    chatroom.createUser(client1);
+    chatroom.createUser(client2);
+    chatroom.createUser(client3);
+
+    const allClients = chatroom.all();
+
+    expect(allClients).toContain(client1);
+    expect(allClients).toContain(client2);
+    expect(allClients).toContain(client3);
+  });
+
 
   // it('gets all', () => {
   //   client1{};
